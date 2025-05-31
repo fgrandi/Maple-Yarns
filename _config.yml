@@ -2,9 +2,7 @@
 name: Maple Yarns
 
 # GitHub Pages deployment configuration
-source:
-  branch: "main"
-  path: "/"
+source: "main"
 
 # Jekyll configuration (optional - GitHub Pages can serve static HTML)
 plugins:
