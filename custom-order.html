@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Order - Maple Yarns</title>
+    <meta name="description" content="Request a custom crochet creation from Stella & Maple.">
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <h1 class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">🧶 Maple Yarns</a></h1>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#projects">Creations</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="index.html#contact">Say Hello</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="custom-order-form" class="section">
+            <div class="container">
+                <h2 class="section-title">Create Your Custom Crochet Piece ✨</h2>
+                <p class="section-subtitle" style="text-align: center; margin-bottom: 2rem;">We're excited to bring your unique crochet vision to life! Please fill out the form below with as much detail as possible, and we'll get back to you to discuss your project.</p>
+                
+                <form action="https://formspree.io/f/xeokjdob" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="item-type">Type of Item:</label>
+                        <select id="item-type" name="item-type">
+                            <option value="amigurumi">Amigurumi (Stuffed Toy)</option>
+                            <option value="blanket">Blanket</option>
+                            <option value="scarf">Scarf/Shawl</option>
+                            <option value="hat">Hat/Beanie</option>
+                            <option value="clothing">Clothing Item (e.g., sweater, cardigan)</option>
+                            <option value="homedecor">Home Decor (e.g., coasters, pillow)</option>
+                            <option value="other">Other (Please specify below)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Detailed Description:</label>
+                        <textarea id="description" name="description" rows="5" placeholder="Describe the item you'd like, including size, style, characters, etc." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="colors">Preferred Colors:</label>
+                        <input type="text" id="colors" name="colors" placeholder="e.g., Pastel pink, forest green, rainbow">
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="references">Reference Images/Links (Optional):</label>
+                        <input type="text" id="references" name="references" placeholder="e.g., Link to a Pinterest pin or image">
+                    </div>
+                    <div class="form-group">
+                        <label for="additional-details">Any Other Specific Details?</label>
+                        <textarea id="additional-details" name="additional-details" rows="3" placeholder="e.g., Specific yarn type, allergies, deadline if any"></textarea>
+                    </div>
+                    <div class="form-group" style="text-align: center;">
+                        <button type="submit" class="btn btn-primary">Submit Custom Order Request</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Maple Yarns. Made with 🧶, 🐾, and lots of ❤️ by Stella & Maple. <a href="index.html">Back to Home</a></p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

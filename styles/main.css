@@ -172,24 +172,16 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 30%, var(--accent-color) 70%, var(--secondary-color) 100%);
+    /* background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 30%, var(--accent-color) 70%, var(--secondary-color) 100%); */
+    background-image: url('../assets/images/yarn-orange.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     color: white;
     padding: 140px 0 100px;
     text-align: center;
     position: relative;
     overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle fill="rgba(255,255,255,0.06)" cx="200" cy="200" r="120"/><circle fill="rgba(255,255,255,0.04)" cx="800" cy="300" r="180"/><circle fill="rgba(255,255,255,0.05)" cx="600" cy="700" r="140"/><circle fill="rgba(255,255,255,0.03)" cx="100" cy="600" r="90"/><circle fill="rgba(255,255,255,0.04)" cx="900" cy="800" r="110"/></svg>');
-    background-size: cover;
-    animation: float 20s ease-in-out infinite;
 }
 
 @keyframes float {
@@ -203,6 +195,42 @@ body {
     max-width: var(--container-width);
     margin: 0 auto;
     padding: 0 1rem;
+}
+
+.hero-title-container { /* New style for the hero title container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    position: relative; /* Ensure this is above the background image if needed */
+    z-index: 2; /* Ensure text and image are above the main hero background */
+}
+
+.hero-title-image { /* Reverted styles for the hero title image */
+    width: 150px; /* Adjusted size to be smaller, next to title */
+    height: 150px; /* Adjusted size */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    box-shadow: var(--shadow-soft);
+    /* Removed styles that made it a large background element:
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    opacity: 0.3; 
+    */
+}
+
+.hero-title-text { /* Style for the text part of the hero title */
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0; /* Remove default margin from h1 */
+    position: relative; /* Ensure text is above background image */
+    z-index: 2;
 }
 
 .hero-title {
@@ -219,6 +247,8 @@ body {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    position: relative; /* Ensure text is above background image */
+    z-index: 2;
 }
 
 .hero-buttons {
@@ -226,6 +256,8 @@ body {
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
+    position: relative; /* Ensure buttons are above background image */
+    z-index: 2;
 }
 
 /* Buttons */
@@ -315,40 +347,92 @@ body {
     border-radius: 2px;
 }
 
+/* Gallery Styles */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.gallery-item {
+    background-color: var(--background-alt);
+    border-radius: var(--border-radius-small);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: var(--shadow-lg);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px; /* Fixed height for uniform look */
+    object-fit: cover; /* Crop images to fit */
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover img {
+    opacity: 0.85;
+}
+
+.gallery-item::after { /* Optional: Add a subtle overlay effect on hover */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover::after {
+    opacity: 1;
+}
+
+
 /* About Section */
 .about-content {
     display: grid;
-    /* grid-template-columns: 1fr 1fr; */ /* Adjusted for new layout */
-    gap: 4rem;
-    align-items: flex-start; /* Align items to the top */
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 3rem; /* Adjust gap as needed */
+    align-items: start; /* Align items to the start (top) of their grid cell */
 }
 
 .about-intro {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr; /* Image takes less space */
-    gap: 3rem;
-    align-items: center;
+    /* This container will now be the left column */
+    display: flex; /* Use flex for internal layout */
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text */
 }
 
 .about-image-container {
     width: 100%;
-    max-width: 400px; /* Max width for the image */
+    max-width: 350px; /* Adjust max-width as desired */
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--shadow-lg);
-    margin-bottom: 2rem; /* Add some space below the image on smaller screens */
+    margin-bottom: 1.5rem; /* Space between image and text */
 }
 
-.about-image {
+.responsive-img { /* New style for responsive images */
     width: 100%;
     height: auto;
     display: block;
-    border-radius: var(--border-radius); /* Ensure image corners are rounded if container has padding */
 }
 
 .about-text {
     font-size: 1.1rem;
     color: var(--text-light);
+    /* text-align: left; Remove if you prefer centered text from .about-intro */
 }
 
 .about-text p {
@@ -356,12 +440,15 @@ body {
 }
 
 .about-features {
+    /* This container will now be the right column */
     display: grid;
-    gap: 2rem;
+    grid-template-rows: repeat(3, auto); /* Each feature takes auto height */
+    gap: 1.5rem;
+    align-content: start; /* Align features to the start (top) of their grid area */
 }
 
 .feature {
-    padding: 1.5rem;
+    padding: 1.5rem; /* Adjust padding as needed */
     background: white;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
@@ -374,27 +461,29 @@ body {
 }
 
 .feature h3 {
-    font-size: 1.2rem;
+    font-size: 1.15rem; /* Adjust font size */
     margin-bottom: 0.5rem;
     color: var(--text-color);
 }
 
 .feature p {
     color: var(--text-light);
+    font-size: 0.95rem; /* Adjust font size */
+    line-height: 1.6;
 }
 
 /* Responsive adjustments for About Section */
 @media (max-width: 992px) { /* Tablet and below */
-    .about-intro {
-        grid-template-columns: 1fr; /* Stack image and text */
+    .about-content {
+        grid-template-columns: 1fr; /* Stack columns */
         text-align: center;
     }
     .about-image-container {
         margin-left: auto;
         margin-right: auto;
     }
-    .about-content {
-        grid-template-columns: 1fr; /* Stack intro and features */
+     .about-intro, .about-features {
+        align-items: center; /* Center content when stacked */
     }
 }
 
@@ -462,105 +551,149 @@ body {
 
 .project-links {
     display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
+    gap: 1rem;
+    flex-wrap: wrap; /* Allow links to wrap on smaller screens */
 }
 
 .project-link {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 600;
-    transition: var(--transition);
-    padding: 0.5rem 1rem;
+    display: inline-block;
+    padding: 0.6rem 1.2rem; /* Slightly smaller padding */
     border-radius: var(--border-radius-small);
-    background: var(--background-accent);
-    border: 1px solid var(--border-color);
+    text-decoration: none;
+    font-weight: 500; /* Medium weight */
+    transition: var(--transition);
+    border: 1px solid var(--primary-light);
+    color: var(--primary-color);
     font-size: 0.9rem;
+    background-color: rgba(255, 255, 255, 0.5); /* Subtle background */
 }
 
 .project-link:hover {
+    background-color: var(--primary-light);
     color: white;
-    background: var(--primary-color);
     transform: translateY(-2px);
     box-shadow: var(--shadow-soft);
-    border-color: var(--primary-color);
 }
+
 
 /* Contact Section */
 .contact-content {
-    text-align: center;
     max-width: 700px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .contact-content p {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     color: var(--text-light);
-    margin-bottom: 3rem;
-    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
 }
 
 .contact-links {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1.5rem;
 }
 
 .contact-link {
-    display: flex;
+    display: inline-flex; /* Use flex for icon alignment */
     align-items: center;
-    justify-content: center;
-    padding: 1.5rem 2rem;
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    color: white;
-    text-decoration: none;
+    gap: 0.75rem; /* Space between icon and text */
+    padding: 0.8rem 1.8rem;
     border-radius: var(--border-radius);
-    font-weight: 600;
-    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: 500;
     transition: var(--transition);
-    position: relative;
-    overflow: hidden;
-    min-height: 70px;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    background-color: white;
     box-shadow: var(--shadow-soft);
 }
 
-.contact-link::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transition: left 0.6s;
-}
-
-.contact-link:hover::before {
-    left: 100%;
-}
-
 .contact-link:hover {
-    background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-.contact-link:nth-child(2) {
-    background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
-}
-
-.contact-link:nth-child(2):hover {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-}
-
-.contact-link:nth-child(3) {
-    background: linear-gradient(135deg, var(--secondary-color), var(--secondary-dark));
-    color: var(--text-color);
-}
-
-.contact-link:nth-child(3):hover {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    background-color: var(--primary-light);
     color: white;
+    border-color: var(--primary-color);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: var(--shadow);
+}
+
+.contact-link svg { /* If using SVG icons */
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+/* Form Styling (for custom-order.html and potentially contact forms) */
+.contact-form {
+    max-width: 700px; /* Or your preferred max-width */
+    margin: 2rem auto 0; /* Add some space above the form */
+    background-color: var(--background-alt); /* Light background for the form area */
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-light);
+}
+
+.form-group {
+    margin-bottom: 1.75rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-small);
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--text-color);
+    background-color: white;
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="number"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(193, 124, 91, 0.2); /* Focus ring with primary color */
+}
+
+.form-group select {
+    appearance: none; /* Remove default select arrow */
+    background-image: url(\'data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M5%207.5L10%2012.5L15%207.5%22%20stroke%3D%22%236B4E3D%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E\');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    padding-right: 2.5rem; /* Make space for custom arrow */
+}
+
+.form-group textarea {
+    resize: vertical; /* Allow vertical resize, disable horizontal */
+    min-height: 120px;
+}
+
+/* Ensure button inside form group with text-align center is properly centered */
+.form-group .btn {
+    /* The button styling is already defined in .btn and .btn-primary */
+    /* If specific adjustments are needed for form buttons, they can be added here */
+    min-width: 200px; /* Example: ensure a minimum width */
 }
 
 /* Footer */
@@ -589,6 +722,18 @@ body {
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
+}
+
+.footer-link {
+    color: var(--accent-color); /* Use accent color for visibility */
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.footer-link:hover {
+    color: var(--accent-dark); /* Darken on hover */
+    text-decoration: underline;
 }
 
 /* Enhanced responsive */
