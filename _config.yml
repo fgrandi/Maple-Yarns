@@ -34,3 +34,7 @@ exclude:
   - node_modules/
   - .gitignore
   - .vscode/
+  - test.css
+  - styles/main-clean.css
+  - styles/main.css.backup
+  - styles/minimal.css
