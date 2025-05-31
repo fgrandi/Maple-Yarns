@@ -1,0 +1,13 @@
+/* Simple test CSS */
+body {
+    background-color: #ffcccc !important;
+    color: #333 !important;
+}
+
+.header {
+    background-color: #ccffcc !important;
+}
+
+.hero {
+    background-color: #ccccff !important;
+}
