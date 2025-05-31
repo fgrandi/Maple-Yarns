@@ -15,8 +15,8 @@ plugins:
 title: "Maple Yarns - Stella & Maple's Crochet Adventures"
 description: "Join Stella and her orange cat Maple on their adorable crochet adventures! Sweet patterns, cozy crafts, and purr-fect creations."
 author: "Stella & Maple"
-url: "https://fgrandi.github.io"
-baseurl: "/Maple-Yarns"
+url: "https://mapleyarns.com" # Changed from https://fgrandi.github.io
+baseurl: "" # Changed from /Maple-Yarns
 
 # Social links (update with your information)
 instagram_username: mapleyarns
