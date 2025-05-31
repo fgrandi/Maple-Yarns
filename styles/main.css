@@ -14,18 +14,18 @@ body {
 
 /* Variables */
 :root {
-    --primary-color: #6366f1;
-    --primary-dark: #4f46e5;
-    --secondary-color: #64748b;
-    --accent-color: #06b6d4;
-    --background-color: #ffffff;
-    --background-alt: #f8fafc;
-    --text-color: #1e293b;
-    --text-light: #64748b;
-    --border-color: #e2e8f0;
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-    --border-radius: 8px;
+    --primary-color: #ff8c42;  /* Warm orange like Maple */
+    --primary-dark: #e07a3a;
+    --secondary-color: #8b7355;  /* Warm brown */
+    --accent-color: #ffb3ba;  /* Soft pink */
+    --background-color: #fefefe;
+    --background-alt: #fff8f5;  /* Warm cream */
+    --text-color: #5d4e37;  /* Warm brown text */
+    --text-light: #8b7355;
+    --border-color: #f0e6d6;  /* Soft cream border */
+    --shadow: 0 4px 6px -1px rgba(255, 140, 66, 0.15);
+    --shadow-lg: 0 20px 25px -5px rgba(255, 140, 66, 0.2);
+    --border-radius: 12px;  /* More rounded for cuteness */
     --container-width: 1200px;
     --transition: all 0.3s ease;
 }
@@ -133,7 +133,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.1)" points="0,1000 1000,0 1000,1000"/></svg>');
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle fill="rgba(255,255,255,0.05)" cx="200" cy="200" r="100"/><circle fill="rgba(255,255,255,0.03)" cx="800" cy="300" r="150"/><circle fill="rgba(255,255,255,0.04)" cx="600" cy="700" r="120"/></svg>');
     background-size: cover;
 }
 

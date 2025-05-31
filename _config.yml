@@ -1,5 +1,5 @@
 # GitHub Pages Configuration
-name: GitHub Pages Site
+name: Maple Yarns
 
 # GitHub Pages deployment configuration
 source:
@@ -12,16 +12,16 @@ plugins:
   - jekyll-seo-tag
 
 # SEO and metadata
-title: "My GitHub Pages Site"
-description: "A modern, responsive website built with HTML, CSS, and JavaScript"
-author: "Your Name"
-url: "https://yourusername.github.io"
-baseurl: "/repository-name"
+title: "Maple Yarns - Stella & Maple's Crochet Adventures"
+description: "Join Stella and her orange cat Maple on their adorable crochet adventures! Sweet patterns, cozy crafts, and purr-fect creations."
+author: "Stella & Maple"
+url: "https://fgrandi.github.io"
+baseurl: "/Maple-Yarns"
 
 # Social links (update with your information)
-github_username: yourusername
-twitter_username: yourusername
-linkedin_username: yourprofile
+instagram_username: mapleyarns
+pinterest_username: mapleyarns
+etsy_shop: mapleyarns
 
 # Build settings
 markdown: kramdown

@@ -1,14 +1,19 @@
-# My GitHub Pages Site
+# Maple Yarns 🧶🐱
 
-A modern, responsive website built with HTML, CSS, and JavaScript, designed to be hosted on GitHub Pages.
+A sweet and cozy website about Stella and her adorable orange cat Maple and their crochet adventures together! Built with love using HTML, CSS, and JavaScript, designed to be hosted on GitHub Pages.
 
-## 🚀 Features
+## 🌟 About Maple Yarns
 
-- **Responsive Design**: Works perfectly on desktop, tablet, and mobile devices
-- **Modern UI**: Clean, professional design with smooth animations
+Welcome to the delightful world of Stella and Maple! This charming website showcases their crochet creations, from tiny amigurumi animals to cozy blankets, all made with love and supervised by Maple the orange cat. Every project tells a story of friendship, creativity, and the special bond between a little girl and her feline companion.
+
+## 🎀 Features
+
+- **Adorable Design**: Sweet, warm colors inspired by Maple's orange fur
+- **Responsive Layout**: Works perfectly on all devices, from phones to desktops
+- **Cozy Aesthetic**: Soft rounded corners and gentle animations
+- **Cat-Approved**: Every element has been personally inspected by Maple
 - **Fast Loading**: Optimized for performance with minimal dependencies
 - **SEO Friendly**: Structured for search engine optimization
-- **Easy to Customize**: Well-organized code that's easy to modify
 
 ## 🛠️ Technologies Used
 
@@ -70,22 +75,24 @@ Your site will be available at `https://yourusername.github.io/repository-name`
 ## ✏️ Customization
 
 ### Content
-- Edit `index.html` to update the content
-- Modify the sections to match your needs
+- Edit `index.html` to update Stella and Maple's stories
+- Add new crochet projects to the creations section
 - Update contact links with your actual social media profiles
+- Add photos of Maple and Stella's crochet adventures
 
 ### Styling
 - All styles are in `styles/main.css`
-- CSS variables at the top of the file control colors and spacing
-- The design uses a mobile-first responsive approach
+- CSS variables control the warm, cozy color scheme
+- Orange and pink theme inspired by Maple's fur
+- The design uses rounded corners for extra cuteness
 
 ### Functionality
 - JavaScript is in `scripts/main.js`
-- Includes smooth scrolling, mobile menu, and scroll animations
-- Add your own interactive features as needed
+- Includes smooth scrolling, mobile menu, and gentle animations
+- Add photo galleries or pattern downloads as needed
 
 ### Configuration
-- Update `_config.yml` with your site information
+- Update `_config.yml` with your Maple Yarns site information
 - Modify the GitHub Actions workflow if needed (`.github/workflows/pages.yml`)
 
 ## 📱 Responsive Breakpoints
@@ -96,36 +103,21 @@ Your site will be available at `https://yourusername.github.io/repository-name`
 
 ## 🎨 Color Scheme
 
-The site uses CSS variables for easy color customization:
+The site uses a warm, cozy color palette inspired by Maple:
 
-- Primary: #6366f1 (Indigo)
-- Secondary: #64748b (Slate)
-- Accent: #06b6d4 (Cyan)
-- Text: #1e293b (Dark Slate)
+- Primary: #ff8c42 (Warm Orange - like Maple's fur!)
+- Accent: #ffb3ba (Soft Pink - for extra sweetness)
+- Secondary: #8b7355 (Warm Brown - like cozy yarn)
+- Text: #5d4e37 (Rich Brown - easy to read)
+- Background: Warm cream tones for comfort
 
-## 🔧 Browser Support
+## 🐾 Maple's Favorites
 
-- Chrome/Chromium (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📞 Support
-
-If you have any questions or need help, please open an issue in this repository.
+- Cozy rounded corners (perfect for cat naps)
+- Soft color transitions (gentle on kitty eyes)
+- Warm orange highlights (matches his beautiful fur)
+- Plenty of white space (room for stretching)
 
 ---
 
-**Built with ❤️ for the web**
+**Made with 🧶, 🐾, and lots of ❤️ by Stella & Maple**

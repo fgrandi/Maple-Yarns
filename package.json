@@ -1,7 +1,7 @@
 {
-  "name": "github-pages-site",
+  "name": "maple-yarns",
   "version": "1.0.0",
-  "description": "A modern, responsive GitHub Pages website",
+  "description": "A sweet website about Stella and her orange cat Maple's crochet adventures",
   "main": "index.html",
   "scripts": {
     "start": "python -m http.server 8000",
@@ -9,18 +9,21 @@
     "dev": "python -m http.server 8000"
   },
   "keywords": [
-    "github-pages",
-    "static-site",
-    "html",
-    "css",
-    "javascript",
-    "responsive"
+    "crochet",
+    "crafts",
+    "handmade",
+    "cats",
+    "cute",
+    "cozy",
+    "yarn",
+    "amigurumi",
+    "github-pages"
   ],
-  "author": "Your Name",
+  "author": "Stella & Maple",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/your-repo-name.git"
+    "url": "https://github.com/fgrandi/Maple-Yarns.git"
   },
-  "homepage": "https://yourusername.github.io/your-repo-name"
+  "homepage": "https://fgrandi.github.io/Maple-Yarns"
 }
