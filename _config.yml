@@ -1,0 +1,36 @@
+# GitHub Pages Configuration
+name: GitHub Pages Site
+
+# GitHub Pages deployment configuration
+source:
+  branch: main
+  path: /
+
+# Jekyll configuration (optional - GitHub Pages can serve static HTML)
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# SEO and metadata
+title: "My GitHub Pages Site"
+description: "A modern, responsive website built with HTML, CSS, and JavaScript"
+author: "Your Name"
+url: "https://yourusername.github.io"
+baseurl: "/repository-name"
+
+# Social links (update with your information)
+github_username: yourusername
+twitter_username: yourusername
+linkedin_username: yourprofile
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - package.json
+  - node_modules/
+  - .gitignore
+  - .vscode/
