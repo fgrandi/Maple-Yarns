@@ -318,9 +318,32 @@ body {
 /* About Section */
 .about-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr; */ /* Adjusted for new layout */
     gap: 4rem;
+    align-items: flex-start; /* Align items to the top */
+}
+
+.about-intro {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Image takes less space */
+    gap: 3rem;
     align-items: center;
+}
+
+.about-image-container {
+    width: 100%;
+    max-width: 400px; /* Max width for the image */
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    margin-bottom: 2rem; /* Add some space below the image on smaller screens */
+}
+
+.about-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--border-radius); /* Ensure image corners are rounded if container has padding */
 }
 
 .about-text {
@@ -358,6 +381,30 @@ body {
 
 .feature p {
     color: var(--text-light);
+}
+
+/* Responsive adjustments for About Section */
+@media (max-width: 992px) { /* Tablet and below */
+    .about-intro {
+        grid-template-columns: 1fr; /* Stack image and text */
+        text-align: center;
+    }
+    .about-image-container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .about-content {
+        grid-template-columns: 1fr; /* Stack intro and features */
+    }
+}
+
+@media (max-width: 768px) { /* Mobile */
+    .about-intro {
+        gap: 2rem;
+    }
+    .about-image-container {
+        max-width: 300px;
+    }
 }
 
 /* Projects Section */
