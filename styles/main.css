@@ -124,6 +124,16 @@ body {
     width: 100%;
 }
 
+.nav-links a.active {
+    color: var(--primary-color);
+    font-weight: 600; /* Make active link slightly bolder */
+}
+
+.nav-links a.active::after {
+    width: 100%; /* Ensure underline is visible for active link */
+    background: linear-gradient(90deg, var(--primary-dark), var(--accent-dark)); /* Slightly darker gradient for active state */
+}
+
 .mobile-menu-toggle {
     display: none;
     flex-direction: column;
@@ -138,6 +148,26 @@ body {
     height: 3px;
     background: var(--text-color);
     transition: var(--transition);
+    border-radius: 2px; /* Added for softer edges */
+}
+
+/* Styles for the "X" icon state */
+.mobile-menu-toggle--open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-menu-toggle--open span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle--open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Header scroll effect */
+.header--scrolled {
+    background: rgba(255, 255, 255, 0.98); /* Slightly more opaque */
+    box-shadow: var(--shadow); /* Use a slightly stronger shadow */
 }
 
 /* Hero Section */
@@ -518,6 +548,39 @@ body {
 @media (max-width: 768px) {
     .nav-links {
         display: none;
+        /* Styles for when the mobile menu is open */
+        position: absolute;
+        top: 80px; /* Align below header */
+        left: 0;
+        right: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.98); /* Consistent with scrolled header */
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        box-shadow: var(--shadow-soft);
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .nav-links--open {
+        display: flex; /* Show the menu */
+    }
+    
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        padding: 1rem 0;
+        display: block; /* Make links take full width for easier tapping */
+        width: 100%;
+    }
+
+    .nav-links a::after { /* Adjust underline for full width links */
+        left: 50%;
+        transform: translateX(-50%);
     }
     
     .mobile-menu-toggle {

@@ -5,23 +5,27 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (mobileMenuToggle && navLinks) {
         mobileMenuToggle.addEventListener('click', function() {
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-            
-            // Animate hamburger menu
-            const spans = mobileMenuToggle.querySelectorAll('span');
-            spans.forEach((span, index) => {
-                if (navLinks.style.display === 'flex') {
-                    if (index === 0) span.style.transform = 'rotate(45deg) translate(5px, 5px)';
-                    if (index === 1) span.style.opacity = '0';
-                    if (index === 2) span.style.transform = 'rotate(-45deg) translate(7px, -6px)';
-                } else {
-                    span.style.transform = 'none';
-                    span.style.opacity = '1';
-                }
-            });
+            navLinks.classList.toggle('nav-links--open');
+            mobileMenuToggle.classList.toggle('mobile-menu-toggle--open');
         });
     }
 });
+
+// Debounce function
+function debounce(func, wait, immediate) {
+    let timeout;
+    return function() {
+        const context = this, args = arguments;
+        const later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        const callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+}
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -41,16 +45,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Header background on scroll
-window.addEventListener('scroll', function() {
+const handleHeaderScroll = debounce(function() {
     const header = document.querySelector('.header');
     if (window.scrollY > 50) {
-        header.style.background = 'rgba(255, 255, 255, 0.98)';
-        header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+        header.classList.add('header--scrolled');
     } else {
-        header.style.background = 'rgba(255, 255, 255, 0.95)';
-        header.style.boxShadow = 'none';
+        header.classList.remove('header--scrolled');
     }
-});
+}, 100); // Debounce with 100ms wait
+
+window.addEventListener('scroll', handleHeaderScroll);
 
 // Intersection Observer for animations
 const observerOptions = {
@@ -79,26 +83,28 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Active navigation link highlighting
-window.addEventListener('scroll', function() {
+const handleActiveLinkScroll = debounce(function() {
     const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
+    const navLinksAnchors = document.querySelectorAll('.nav-links a'); // Renamed to avoid conflict
     
     let current = '';
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (window.scrollY >= (sectionTop - 200)) {
+        // const sectionHeight = section.clientHeight; // Not strictly needed for this logic
+        if (window.scrollY >= (sectionTop - document.querySelector('.header').offsetHeight - 50)) { // Adjusted offset
             current = section.getAttribute('id');
         }
     });
 
-    navLinks.forEach(link => {
+    navLinksAnchors.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === '#' + current) {
             link.classList.add('active');
         }
     });
-});
+}, 150); // Debounce with 150ms wait
+
+window.addEventListener('scroll', handleActiveLinkScroll);
 
 // Form handling (if you add a contact form later)
 function handleFormSubmit(event) {
