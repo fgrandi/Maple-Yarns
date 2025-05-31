@@ -1,0 +1,29 @@
+# This file lists items that might be considered for exclusion from different processes (e.g., Git tracking, site builds).
+# Note: This file itself is not automatically processed by standard tools like Git or Jekyll.
+# - For Git exclusions, use a .gitignore file at the project root.
+# - For GitHub Pages (Jekyll) build exclusions, add to the 'exclude' list in _config.yml.
+
+# Potential files/patterns for exclusion:
+
+# Backup files
+*.backup
+styles/main.css.backup
+
+# Test/temporary files
+test.css
+
+# Project metadata / documentation (if not part of the live site content)
+README.md
+package.json
+_config.yml
+
+# Directories often excluded
+# node_modules/
+# .sass-cache/
+# .vscode/
+
+# OS-specific files
+.DS_Store
+
+# The .github directory itself is often excluded from site builds
+# (though this file is inside it)
