@@ -88,6 +88,11 @@ body {
     gap: 0.5rem;
 }
 
+.logo-image {
+    display: block; /* Prevents extra space below inline/inline-block images */
+    height: 50px; /* Matches inline style, can be managed here */
+}
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -724,6 +729,15 @@ body {
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
+}
+
+.footer-qr-code {
+    display: block;
+    margin: 0 auto 1.5rem auto; /* Center and add margin below */
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--shadow-soft);
 }
 
 .footer-link {
