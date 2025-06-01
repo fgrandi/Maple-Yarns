@@ -21,6 +21,12 @@ instagram_username: mapleyarns
 pinterest_username: mapleyarns
 etsy_shop: mapleyarns
 
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:title/
+
 # Build settings
 markdown: kramdown
 highlighter: rouge
