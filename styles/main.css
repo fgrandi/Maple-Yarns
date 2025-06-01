@@ -129,6 +129,24 @@ body {
     width: 100%;
 }
 
+.nav-links.nav-links--open {
+    display: flex; /* Ensure it's flex when open */
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Adjust based on header height */
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.98); /* Match scrolled header */
+    padding: 1rem;
+    box-shadow: var(--shadow);
+    z-index: 999; /* Below header but above content */
+    align-items: center; /* Center links when open */
+    gap: 1.5rem; /* Adjust gap for open menu */
+    transform: translateY(0%); /* Slide in */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 1;
+}
+
 .nav-links a.active {
     color: var(--primary-color);
     font-weight: 600; /* Make active link slightly bolder */
@@ -156,18 +174,53 @@ body {
     border-radius: 2px; /* Added for softer edges */
 }
 
-/* Styles for the "X" icon state */
-.mobile-menu-toggle--open span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide by default on mobile */
+        /* Remove initial absolute positioning properties from here */
+        /* They will be applied by .nav-links--open */
+        transform: translateY(-100%); /* Start off-screen */
+        opacity: 0;
+    }
+
+    .mobile-menu-toggle {
+        display: flex; /* Show the toggle button */
+    }
+
+    .nav-links--open { /* This class is toggled by JS */
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Height of the header */
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98); /* Consistent background */
+        padding: 1.5rem 0; /* More vertical padding */
+        box-shadow: var(--shadow-soft); /* Softer shadow for dropdown */
+        z-index: 999;
+        align-items: center;
+        gap: 1.2rem; /* Slightly reduced gap for mobile */
+        transform: translateY(0%); /* Slide in */
+        opacity: 1; /* Make visible */
+        transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Smoother transition */
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block; /* Make links take full width for easier tapping */
+        padding: 0.8rem 1rem; /* Adjust padding for better tap targets */
+        width: 100%;
+    }
+
+    .nav-links a::after { /* Optional: remove underline for mobile, or adjust */
+        display: none;
+    }
 }
 
-.mobile-menu-toggle--open span:nth-child(2) {
-    opacity: 0;
-}
-
-.mobile-menu-toggle--open span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-}
 
 /* Header scroll effect */
 .header--scrolled {
