@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Disallow crawling of certain files and directories
+Disallow: /scripts/
+Disallow: /styles/
+Disallow: /*.css$
+Disallow: /*.js$
+
+# Allow images for search engines
+Allow: /assets/images/
+
+# Sitemap location
+Sitemap: https://mapleyarns.com/sitemap.xml
+
+# Crawl-delay for bots (optional)
+Crawl-delay: 1

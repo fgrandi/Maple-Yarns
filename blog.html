@@ -1,17 +1,51 @@
 ---
 layout: default
-title: Blog
+title: "Crochet Adventures Blog - Maple Yarns"
+description: "Follow Stella and Maple's crochet adventures! Tips, patterns, stories, and purr-fect moments from our handmade crafting journey."
+keywords: "crochet blog, crochet tips, yarn crafts, amigurumi patterns, handmade tutorials, crochet stories"
 ---
 
 <div class="blog-index">
-  <h2>Latest Posts</h2>
-  <ul>
-    {% for post in site.posts %}
-      <li>
-        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-        <p class="post-meta">{{ post.date | date_to_string }}</p>
-        <p>{{ post.excerpt }}</p>
-      </li>
-    {% endfor %}
-  </ul>
+  <!-- Breadcrumb Navigation -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb-list">
+        <li><a href="/">Home</a></li>
+        <li aria-current="page">Blog</li>
+      </ol>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header class="blog-header">
+      <h1>Crochet Adventures Blog 📝</h1>
+      <p class="blog-description">Follow our crafting journey with tips, patterns, and stories from Stella & Maple's cozy crochet world!</p>
+    </header>
+
+    <section class="blog-posts">
+      <h2 class="section-title">Latest Posts</h2>
+      {% if site.posts.size > 0 %}
+        <div class="posts-grid">
+          {% for post in site.posts %}
+            <article class="post-preview">
+              <header class="post-header">
+                <h3 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                <time class="post-meta" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+              </header>
+              <div class="post-excerpt">
+                {{ post.excerpt }}
+              </div>
+              <footer class="post-footer">
+                <a href="{{ post.url }}" class="read-more-link">Read More →</a>
+              </footer>
+            </article>
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="no-posts">
+          <p>🐱 Maple and I are working on some purr-fect blog posts! Check back soon for crochet tips, patterns, and our crafting adventures.</p>
+        </div>
+      {% endif %}
+    </section>
+  </div>
 </div>

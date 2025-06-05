@@ -1,22 +1,37 @@
 # GitHub Pages Configuration
 name: Maple Yarns
 
-# Jekyll configuration (optional - GitHub Pages can serve static HTML)
+# Jekyll configuration
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-feed
 
 # SEO and metadata
 title: "Maple Yarns - Stella & Maple's Crochet Adventures"
 description: "Join Stella and her orange cat Maple on their adorable crochet adventures! Sweet patterns, cozy crafts, and purr-fect creations."
 author: "Stella & Maple"
-url: "https://mapleyarns.com" # Changed from https://fgrandi.github.io
-baseurl: "" # Changed from /Maple-Yarns
+url: "https://mapleyarns.com"
+baseurl: ""
 
-# Social links (update with your information)
+# Social links
+social:
+  name: Stella & Maple
+  links:
+    - https://instagram.com/mapleyarns
 instagram_username: mapleyarns
 pinterest_username: mapleyarns
 etsy_shop: mapleyarns
+
+# SEO specific settings
+logo: /assets/images/maple-logo.png
+twitter:
+  username: mapleyarns
+  card: summary_large_image
+
+# Language and locale
+lang: en_US
+timezone: America/New_York
 
 # Collections
 collections:
