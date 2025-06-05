@@ -1,12 +1,6 @@
 # GitHub Pages Configuration
 name: Maple Yarns
 
-# Jekyll configuration
-plugins:
-  - jekyll-sitemap
-  - jekyll-seo-tag
-  - jekyll-feed
-
 # SEO and metadata
 title: "Maple Yarns - Stella & Maple's Crochet Adventures"
 description: "Join Stella and her orange cat Maple on their adorable crochet adventures! Sweet patterns, cozy crafts, and purr-fect creations."
@@ -33,24 +27,11 @@ twitter:
 lang: en_US
 timezone: America/New_York
 
-# Collections
-collections:
-  posts:
-    output: true
-    permalink: /blog/:title/
-
-# Build settings
-markdown: kramdown
-highlighter: rouge
-
-# Exclude files from processing
+# Build settings for static site
 exclude:
   - README.md
   - package.json
   - node_modules/
   - .gitignore
   - .vscode/
-  - test.css
-  - styles/main-clean.css
-  - styles/main.css.backup
-  - styles/minimal.css
+  - SEO-CHECKLIST.md
